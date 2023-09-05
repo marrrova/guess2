@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Guess a number</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+	<form onkeypress="if(event.keyCode === 13) return false">
+		<input placeholder="відгадай число (0..9)" id="v" onkeypress="if(event.keyCode === 13) guess()" autocomplete="off"
+			maxlength="1">
+		<input type="button" onclick="game()" value="нова гра">
+		<p id="r"></p>
+	</form>
+	<p><img id="picture" src="img/lose.webp" alt=""></p>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
