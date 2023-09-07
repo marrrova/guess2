@@ -1,3 +1,6 @@
+let buttons = document.querySelectorAll(".number")
+console.log(buttons)
+buttons[0].addEventListener("click",guess)
 let sound = new Audio();
 sound.src = "sound.mp3"
 sound.volume = 0.05
@@ -16,6 +19,7 @@ return document.getElementById('r')
 function guess() {
 //основна функція гри
   let a = document.getElementById('v').value;
+  if(document.getElementById('v').value==="")a = 
   //записую відповідь гравця 
   d = parseInt(a, 10);
 //збереження відповідей як числа (10-десяткова система числення можна просто написати Number(a))
