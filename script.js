@@ -1,6 +1,16 @@
 let buttons = document.querySelectorAll(".number")
-console.log(buttons)
-buttons[0].addEventListener("click",guess)
+let guessButton = ""
+
+for(let i = 0; i < buttons.length; i++){
+buttons[i].addEventListener("click",
+  function(){
+    document.getElementById('v').value = ""
+    guessButton = this.textContent
+    guess()
+  }
+  )
+}
+  
 let sound = new Audio();
 sound.src = "sound.mp3"
 sound.volume = 0.05
@@ -18,9 +28,11 @@ return document.getElementById('r')
 //взяли текст відповіді
 function guess() {
 //основна функція гри
-  let a = document.getElementById('v').value;
-  if(document.getElementById('v').value==="")a = 
-  //записую відповідь гравця 
+  let a = ""
+  let guessFromInput = document.getElementById('v').value
+  if (guessFromInput === "") a = guessButton
+  else a = guessFromInput
+  //записую відповідь гравця
   d = parseInt(a, 10);
 //збереження відповідей як числа (10-десяткова система числення можна просто написати Number(a))
   if (s <= 3) {
